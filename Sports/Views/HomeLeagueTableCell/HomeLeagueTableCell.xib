@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="157" id="KGk-i7-Jjw" customClass="HomeLeagueTableCell" customModule="Sports" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="404" height="157"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="404" height="157"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zyi-lf-E9Y">
+                        <rect key="frame" x="0.0" y="0.0" width="404" height="157"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="English Premier League" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLK-OS-M2H">
+                                <rect key="frame" x="10" y="10" width="384" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soccer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MgB-Wc-YbE">
+                                <rect key="frame" x="10" y="41" width="384" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="Premier LeaguePremier LeaguePremier LeaguePremier LeaguePremier LeaguePremier LeaguePremier LeaguePremier LeaguePremier League" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZu-zf-JxA">
+                                <rect key="frame" x="10" y="86" width="384" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="MgB-Wc-YbE" firstAttribute="trailing" secondItem="vLK-OS-M2H" secondAttribute="trailing" id="09A-uQ-hzT"/>
+                            <constraint firstItem="MgB-Wc-YbE" firstAttribute="leading" secondItem="vLK-OS-M2H" secondAttribute="leading" id="6cB-W0-oWe"/>
+                            <constraint firstItem="NZu-zf-JxA" firstAttribute="top" secondItem="MgB-Wc-YbE" secondAttribute="bottom" constant="10" id="887-NX-PpD"/>
+                            <constraint firstItem="vLK-OS-M2H" firstAttribute="leading" secondItem="Zyi-lf-E9Y" secondAttribute="leading" constant="10" id="8DF-pN-6s0"/>
+                            <constraint firstItem="vLK-OS-M2H" firstAttribute="top" secondItem="Zyi-lf-E9Y" secondAttribute="top" constant="10" id="J1v-vv-5X7"/>
+                            <constraint firstAttribute="bottom" secondItem="NZu-zf-JxA" secondAttribute="bottom" constant="10" id="Ktz-ae-H2B"/>
+                            <constraint firstItem="NZu-zf-JxA" firstAttribute="trailing" secondItem="MgB-Wc-YbE" secondAttribute="trailing" id="Plp-MY-doE"/>
+                            <constraint firstItem="MgB-Wc-YbE" firstAttribute="top" secondItem="vLK-OS-M2H" secondAttribute="bottom" constant="10" id="S2N-ac-A8Y"/>
+                            <constraint firstItem="NZu-zf-JxA" firstAttribute="leading" secondItem="MgB-Wc-YbE" secondAttribute="leading" id="jua-0q-akd"/>
+                            <constraint firstAttribute="trailing" secondItem="vLK-OS-M2H" secondAttribute="trailing" constant="10" id="um1-C2-nwp"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Zyi-lf-E9Y" secondAttribute="trailing" id="17e-VI-7Ub"/>
+                    <constraint firstItem="Zyi-lf-E9Y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="i9Z-UA-spi"/>
+                    <constraint firstItem="Zyi-lf-E9Y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="oiC-8f-U5G"/>
+                    <constraint firstAttribute="bottom" secondItem="Zyi-lf-E9Y" secondAttribute="bottom" id="soy-CU-sxs"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="categoryLeagueLabel" destination="MgB-Wc-YbE" id="Hhs-U4-0GL"/>
+                <outlet property="leagueAlternateLabel" destination="NZu-zf-JxA" id="2iB-IR-fS9"/>
+                <outlet property="leagueNameLabel" destination="vLK-OS-M2H" id="zYL-fX-qQ8"/>
+            </connections>
+            <point key="canvasLocation" x="198.55072463768118" y="179.79910714285714"/>
+        </tableViewCell>
+    </objects>
+</document>
