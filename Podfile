@@ -6,5 +6,8 @@ target 'Sports' do
   use_frameworks!
 
   # Pods for Sports
+  
+  pod 'Alamofire'
+  pod 'Kingfisher'
 
 end
