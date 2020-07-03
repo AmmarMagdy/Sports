@@ -9,20 +9,21 @@
 import UIKit
 
 class HomeLeagueTableCell: UITableViewCell {
-
+    
     @IBOutlet weak var leagueNameLabel: UILabel!
     @IBOutlet weak var categoryLeagueLabel: UILabel!
     @IBOutlet weak var leagueAlternateLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func display(name: String) {
+        leagueNameLabel.text = name
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func display(category: String) {
+        categoryLeagueLabel.text =  category
+    }
+    
+    func display(leagueAlternate: String) {
+        leagueAlternateLabel.text = leagueAlternate
     }
     
 }
