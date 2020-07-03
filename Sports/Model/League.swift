@@ -18,4 +18,3 @@ struct Leagues : Codable {
     let strLeagueAlternate : String?
     let strSport : String?
 }
-
