@@ -9,12 +9,12 @@
 import Foundation
 
 struct LeaguesDetails : Codable {
-
-    let leagueDetails : [LeagueDetails]?
+    
+    let leagues: [LeagueDetails]?
 }
 
 struct LeagueDetails : Codable {
-
+    
     let dateFirstEvent : String?
     let idAPIfootball : String?
     let idCup : String?

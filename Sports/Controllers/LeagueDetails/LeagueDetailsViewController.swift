@@ -7,30 +7,56 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
-class LeagueDetailsViewController: UIViewController {
 
+class LeagueDetailsViewController: UIViewController, NVActivityIndicatorViewable {
+    
     @IBOutlet weak var leagueImageView: UIImageView!
     @IBOutlet weak var nameLeagueLabel: UILabel!
     @IBOutlet weak var sportsLeagueLabel: UILabel!
     @IBOutlet weak var countryLeagueLabel: UILabel!
     @IBOutlet weak var descLabel: UILabel!
     
+    var presenter: LeaguesDetailsPresenter!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        presenter.fetchLeaguesDetailsFromAPI()
     }
+}
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension LeagueDetailsViewController: LeaguesDetailsView {
+    func display(image: String ) {
+        self.leagueImageView.showImage(image)
     }
-    */
-
+    
+    func display(name: String) {
+        self.nameLeagueLabel.text = name
+    }
+    
+    func display(sports: String) {
+        self.sportsLeagueLabel.text = sports
+    }
+    
+    func display(country: String) {
+        self.countryLeagueLabel.text = country
+    }
+    
+    func display(description : String) {
+        self.descLabel.text = description
+    }
+    
+    func displayNavigationBarTitle(title: String) {
+        self.navigationItem.title = title
+    }
+    
+    func startLoadData() {
+        self.startAnimating()
+    }
+    
+    func stopLoadData() {
+        self.stopAnimating()
+    }
+    
 }

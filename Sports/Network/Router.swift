@@ -15,7 +15,6 @@ enum Router: URLRequestConvertible {
     case getLeagues
     case getLeaguesDetails(id: String)
     
-    
     var url: URL {
         switch self {
         case .getLeagues:

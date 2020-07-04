@@ -8,31 +8,41 @@
 
 import Foundation
 
+protocol HomeLeagueView : AnyObject {
+    func reloadTableViewData()
+    func navigateToLeaugesDetails(id: String)
+}
+
 protocol HomeLeaguePresenter {
     var numberOfLeague: Int { get }
     func configure(cell: HomeLeagueTableCell, forRow row: Int)
     func fetchLeaguesFromAPI()
+    func didSelectRowAt(index: Int)
 }
 
 class HomeLeagueImplementation: HomeLeaguePresenter {
     
-    weak var view : HomeLeagueViewController?
+    weak var view : HomeLeagueView?
     var leagues = [Leagues]()
     
     var numberOfLeague: Int {
         return leagues.count
     }
     
-    init(view : HomeLeagueViewController) {
+    init(view : HomeLeagueView) {
         self.view = view
     }
     
     func configure(cell: HomeLeagueTableCell, forRow row: Int) {
         let league = self.leagues[row]
-        
         cell.display(name: league.strLeague ?? "")
         cell.display(category: league.strSport ?? "")
         cell.display(leagueAlternate: league.strLeagueAlternate ?? "")
+    }
+    
+    func didSelectRowAt(index: Int) {
+        guard let leagueID = self.leagues[index].idLeague else { return }
+        view?.navigateToLeaugesDetails(id: leagueID)
     }
     
     func fetchLeaguesFromAPI() {
@@ -43,7 +53,7 @@ class HomeLeagueImplementation: HomeLeaguePresenter {
                     let league = try JSONDecoder().decode(League.self, from: result)
                     if let _ = league.leagues {
                         self.leagues = league.leagues!
-                        self.view?.leaguesTableView.reloadData()
+                        self.view?.reloadTableViewData()
                     }
                 } catch let error {
                     print(error)
@@ -55,3 +65,5 @@ class HomeLeagueImplementation: HomeLeaguePresenter {
     }
     
 }
+
+

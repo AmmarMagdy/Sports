@@ -7,12 +7,12 @@
 //
 
 struct League : Codable {
-
+    
     let leagues : [Leagues]?
 }
 
 struct Leagues : Codable {
-
+    
     let idLeague : String?
     let strLeague : String?
     let strLeagueAlternate : String?

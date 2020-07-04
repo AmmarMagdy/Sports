@@ -17,11 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         var vc = UINavigationController()
         vc = UINavigationController(rootViewController: HomeLeagueViewController())
-        vc.isNavigationBarHidden = true
+        setupNavigationView()
         self.window?.rootViewController = vc
         self.window?.makeKeyAndVisible()
         return true
     }
     
+    func setupNavigationView() {
+        UINavigationBar.appearance().barTintColor = .black
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        
+    }
 }
 

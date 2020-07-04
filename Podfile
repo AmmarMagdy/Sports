@@ -4,10 +4,11 @@
 target 'Sports' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
+  
   # Pods for Sports
   
   pod 'Alamofire'
   pod 'Kingfisher'
-
+  pod 'NVActivityIndicatorView'
+  
 end

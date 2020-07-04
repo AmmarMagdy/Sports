@@ -10,7 +10,16 @@ import UIKit
 
 @IBDesignable class CustomView: UIView {
     
-
+    @IBInspectable var isRounded: Bool = false
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        if self.isRounded {
+            self.layer.cornerRadius = self.bounds.height / 2
+        }
+        layer.shadowRadius = self.shadowRadius
+    }
+    
     @IBInspectable var cornerRadius: Float {
         get {
             return Float(layer.cornerRadius)
@@ -39,18 +48,16 @@ import UIKit
         }
     }
     
-    @IBInspectable
-    var shadowPath: CGPath? {
-          get {
-              return layer.shadowPath
-          }
-          set {
+    @IBInspectable var shadowPath: CGPath? {
+        get {
+            return layer.shadowPath
+        }
+        set {
             self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.layer.cornerRadius).cgPath
-          }
+        }
     }
     
-    @IBInspectable
-    var shadowOpacity: Float {
+    @IBInspectable var shadowOpacity: Float {
         get {
             return layer.shadowOpacity
         }
@@ -59,8 +66,7 @@ import UIKit
         }
     }
     
-    @IBInspectable
-    var shadowOffset: CGSize {
+    @IBInspectable var shadowOffset: CGSize {
         get {
             return layer.shadowOffset
         }
@@ -84,5 +90,13 @@ import UIKit
             }
         }
     }
+    
+    @IBInspectable var shadowRadius: CGFloat {
+        get {
+            return layer.shadowRadius
+        }
+        set {
+            layer.shadowRadius = newValue
+        }
+    }
 }
-

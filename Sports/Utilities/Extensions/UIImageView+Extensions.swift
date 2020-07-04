@@ -22,7 +22,7 @@ extension UIImageView {
                 break
             case .failure:
                 self?.contentMode = .scaleAspectFit
-                self?.image = #imageLiteral(resourceName: "31")
+                self?.image = #imageLiteral(resourceName: "icons8-soccer-ball-50")
             }
         }
     }

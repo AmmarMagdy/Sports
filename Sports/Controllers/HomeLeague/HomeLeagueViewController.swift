@@ -9,14 +9,16 @@
 import UIKit
 
 class HomeLeagueViewController: UIViewController {
-
+    
     @IBOutlet weak var leaguesTableView: UITableView!
     
     var presenter: HomeLeaguePresenter!
     let leagueCell = "leagueCell"
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Leagues"
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         presenter = HomeLeagueImplementation(view : self)
         leaguesTableView.register(UINib(nibName: "HomeLeagueTableCell", bundle: nil), forCellReuseIdentifier: leagueCell)
         presenter.fetchLeaguesFromAPI()
@@ -44,7 +46,27 @@ extension HomeLeagueViewController: UITableViewDataSource {
         let cell = cell as! HomeLeagueTableCell
         presenter.configure(cell: cell, forRow: indexPath.row)
     }
-    
 }
 
+// MARK: - UITableViewDelegate
+
+extension HomeLeagueViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.presenter?.didSelectRowAt(index: indexPath.row)
+    }
+}
+
+extension HomeLeagueViewController: HomeLeagueView {
+    
+    func reloadTableViewData() {
+        self.leaguesTableView.reloadData()
+    }
+    
+    func navigateToLeaugesDetails(id: String) {
+        let vc = LeagueDetailsViewController()
+        vc.presenter = LeagueDetailsImplementation(view: vc)
+        vc.presenter.leagueId = id
+        self.navigationController!.pushViewController(vc, animated: true)
+    }
+}
 
